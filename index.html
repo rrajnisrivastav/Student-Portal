@@ -1,0 +1,90 @@
+<html>
+<head>
+<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+<script src="bootstrap/js/jquery-3.2.0.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="angular/angular-1.6.3/angular.min.js"></script>
+<script src="app.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="StudentCtrl">
+<form class="form-horizontal" role="form" ng-submit="addRow()">
+	<div class="form-group">
+		<label class="col-md-2 control-label">Name</label>
+		<div class="col-md-4">
+			<input type="text" class="form-control" name="name"
+				ng-model="name" />
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-md-2 control-label">Course</label>
+		<div class="col-md-4">
+			<input type="text" class="form-control" name="course"
+				ng-model="course" />
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-md-2 control-label">DoB</label>
+		<div class="col-md-4">
+			<input type="date" class="form-control" name="dob"
+				ng-model="dob" />
+		</div>
+	</div>
+	
+	<div class="form-group">
+		<label class="col-md-2 control-label">Father's Name</label>
+		<div class="col-md-4">
+			<input type="text" class="form-control" name="fatherName"
+				ng-model="fatherName" />
+		</div>
+	</div>
+	
+	<div class="form-group">
+		<label class="col-md-2 control-label">Mother's Name</label>
+		<div class="col-md-4">
+			<input type="text" class="form-control" name="motherName"
+				ng-model="motherName" />
+		</div>
+	</div>
+	
+	<div class="form-group">
+		<label class="col-md-2 control-label">Fees</label>
+		<div class="col-md-4">
+			<input type="number" class="form-control" name="fees"
+				ng-model="fees" />
+		</div>
+	</div>
+	
+	
+	<div class="form-group">								
+		<div style="padding-left:110px">
+			<input type="submit" value="Add" class="btn btn-primary"/>
+			<input type="submit" value="Cancel" class="btn btn-danger"/>
+		</div>
+	</div>
+</form>
+			
+<table class="table">
+	<tr>
+		<th>Name</th>
+		<th>Course</th>
+		<th>DoB</th>
+		<th>Father's Name</th>
+		<th>Mother's Name</th>
+		<th>Fees</th>
+		
+	</tr>
+	<tr ng-repeat="student in students">
+		<td>{{student.name}}</td>
+		<td>{{student.course | uppercase}}</td>
+		<td>{{student.dob}}</td>
+		<td>{{student.fatherName}}</td>
+		<td>{{student.motherName}}</td>
+		<td>{{student.fees |currency}}</td>
+		
+	</tr>
+</table>
+
+
+					
+</body>
+</html>
